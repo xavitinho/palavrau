@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PalaVRAU!</title>
+	<link rel="stylesheet" href="bulma.css">
+</head>
+
+<body style="background-color: #222; min-height: 100vh; display: flex; justify-content: center; align-items: center;">
+	<div class="section" id="jogo">
+
+		<figure class = "image" style="max-width: 80%"><img src="palavrau.png"></figure>
+
+		<table  id="tabuleiro" class="table is-narrow is-family-monospace">
+		</table>
+
+		<table id="teclado" class="table is-narrow is-family-monospace">
+			<tr id="teclado-linha-1"> </tr>
+			<tr id="teclado-linha-2"> </tr>
+			<tr id="teclado-linha-3"> </tr>
+		</table>
+
+		<div id="modal" class="modal">
+			<div class="modal-background"></div>
+			<div class="modal-content">
+				<div class="notification is-danger">
+					<button class="delete" onclick="closemodal()"></button>
+					<div id="alerta"> </div>
+				</div>
+			</div>
+		</div>
+
+		<script src="script.js"></script>
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
