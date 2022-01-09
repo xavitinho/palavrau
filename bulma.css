@@ -488,6 +488,8 @@ a.box:active {
 }
 
 .button {
+  margin: 0.1em;
+  padding: 1em;
   background-color: white;
   border-color: #dbdbdb;
   border-width: 1px;
