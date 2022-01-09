@@ -11,53 +11,43 @@ const letras = [
 ]
 
 let iniciotxt = `
-<section>
-  <div class="instructions">
     <p>Você tem 6 chances para descobrir a palavra VRAU!</p>
     <p>Após cada tentativa, a cor de cada letra vai mudar para mostrar o quão próximo você está da palavra certa</p>
     <br><br>
-    <div class="examples">
-      <div class="example">
-        <table id="exemplo1" class="table is-narrow is-family-monospace">
-          <tr>
-            <td class="td"> <div class="tag is-black   is-size-3"> t </div></td>
-            <td class="td"> <div class="tag is-black   is-size-3"> e </div></td>
-            <td class="td"> <div class="tag is-warning is-size-3"> s </div></td>
-            <td class="td"> <div class="tag is-black   is-size-3"> t </div></td>
-            <td class="td"> <div class="tag is-black   is-size-3"> e </div></td>
-          </tr>
-        </table>
-        <p>A letra <strong>S</strong> está na palavra mas em outra posição</p>
-        <br><br>
-      </div>
-      <div class="example">
-        <table id="exemplo1" class="table is-narrow is-family-monospace">
-          <tr>
-            <td class="td"> <div class="tag is-black   is-size-3"> J </div></td>
-            <td class="td"> <div class="tag is-black   is-size-3"> e </div></td>
-            <td class="td"> <div class="tag is-black   is-size-3"> s </div></td>
-            <td class="td"> <div class="tag is-primary is-size-3"> u </div></td>
-            <td class="td"> <div class="tag is-black   is-size-3"> s </div></td>
-          </tr>
-        </table>
-        <p>A letra <strong>U</strong> está na palavra e na posição certa.</p>
-        <br><br>
-      </div>
-      <div class="example">
-        <table id="exemplo1" class="table is-narrow is-family-monospace">
-          <tr>
-            <td class="td"> <div class="tag is-warning is-size-3"> r </div></td>
-            <td class="td"> <div class="tag is-warning is-size-3"> e </div></td>
-            <td class="td"> <div class="tag is-warning is-size-3"> s </div></td>
-            <td class="td"> <div class="tag is-warning is-size-3"> t </div></td>
-            <td class="td"> <div class="tag is-black   is-size-3"> o </div></td>
-          </tr>
-        </table>
-        <p>A letra <strong>O</strong> não está na palavra em posição nenhuma.</p>
-      </div>
-    </div>
-  </div>
-</section>`
+    <table id="exemplo1" class="table is-narrow is-family-monospace">
+      <tr>
+        <td class="td"> <div class="tag is-black   is-size-3"> t </div></td>
+        <td class="td"> <div class="tag is-black   is-size-3"> e </div></td>
+        <td class="td"> <div class="tag is-warning is-size-3"> s </div></td>
+        <td class="td"> <div class="tag is-black   is-size-3"> t </div></td>
+        <td class="td"> <div class="tag is-black   is-size-3"> e </div></td>
+      </tr>
+    </table>
+    <p>A letra <strong>S</strong> está na palavra mas em outra posição</p>
+    <br><br>
+      
+    <table id="exemplo1" class="table is-narrow is-family-monospace">
+      <tr>
+        <td class="td"> <div class="tag is-black   is-size-3"> J </div></td>
+        <td class="td"> <div class="tag is-black   is-size-3"> e </div></td>
+        <td class="td"> <div class="tag is-black   is-size-3"> s </div></td>
+        <td class="td"> <div class="tag is-primary is-size-3"> u </div></td>
+        <td class="td"> <div class="tag is-black   is-size-3"> s </div></td>
+      </tr>
+    </table>
+    <p>A letra <strong>U</strong> está na palavra e na posição certa.</p>
+    <br><br>
+      
+    <table id="exemplo1" class="table is-narrow is-family-monospace">
+      <tr>
+        <td class="td"> <div class="tag is-warning is-size-3"> r </div></td>
+        <td class="td"> <div class="tag is-warning is-size-3"> e </div></td>
+        <td class="td"> <div class="tag is-warning is-size-3"> s </div></td>
+        <td class="td"> <div class="tag is-warning is-size-3"> t </div></td>
+        <td class="td"> <div class="tag is-black   is-size-3"> o </div></td>
+      </tr>
+    </table>
+    <p>A letra <strong>O</strong> não está na palavra em posição nenhuma.</p>`
 
 main()
 alerta(iniciotxt)
@@ -186,7 +176,7 @@ function fim(vitoria) {
     alerta('tente de novo :(')
   }
   let a = document.getElementById('alerta')
-  a.innerHTML += `<button class="button is-fullwidth is-dark is-outlined" onclick="main()">jogar novamente</button>
+  a.innerHTML += `<button class="button is-fullwidth is-light is-outlined" onclick="main()">jogar novamente</button>
   `
 }
 
@@ -211,7 +201,7 @@ function iniciateclado() {
         `<td>
         <button id="botão-enviar" onclick="verificar()" class="button is-light">
 				<span>&nbsp;</span>
-          <span class="icon is-small">
+          <span>
 						<ion-icon name="send"></ion-icon>
           </span>
         <span>&nbsp;</span>
@@ -226,7 +216,7 @@ function iniciateclado() {
       code +=
         `<td>
         <button id="botão-limpar" onclick="limpar()" class="button is-light is-outlined">
-        <span class="icon is-small">
+        <span>
           <ion-icon name="close-circle"></ion-icon>
         </span>
         </button>
@@ -235,4 +225,3 @@ function iniciateclado() {
     linha.innerHTML = code
   }
 }
-
