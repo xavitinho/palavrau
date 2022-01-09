@@ -11,9 +11,9 @@ body {
     justify-content: space-between;
 }
 
-figure {
+img {
     display: flex; 
-    max-width: 80%;
+    max-width: 20em;
 }
 
 .table {
