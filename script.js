@@ -83,15 +83,12 @@ function verificar() {
     for (let j = 1; j < 6; j++) {
       chute += tabuleiro[chance][j]
     }
-    console.log(chute)
     if (palavras.validas[chute] || palavras.certas[chute]) {
       let ls = palavra.split('')
       for (let j = 0; j < 5; j++) {
-        console.log(ls[j])
         if(ls[j] !== 'ç') {
           ls[j] = ls[j].normalize('NFD').replace(/[\u0300-\u036f]/g, "")
         }
-        console.log(ls[j])
         let show = document.getElementById(`p${chance}l${j + 1}`)
         let tecla = document.getElementById(tabuleiro[chance][j + 1])
         if (ls[j] === tabuleiro[chance][j + 1]) {
