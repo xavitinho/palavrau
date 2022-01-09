@@ -8,15 +8,16 @@
 	<link rel="stylesheet" href="bulma.css">
 </head>
 
-<body style="background-color: #222; min-height: 100vh; display: flex; justify-content: center; align-items: center;">
-	
-	<div class="section" id="jogo" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+<body style="background-color: #222; min-height: 100vh;">
 
-		<figure class="image" style="display: flex; max-width: 80%"><img src="palavrau.png"></figure>
+	<div class="section" id="jogo"
+		style="display: flex; flex:grow; flex-direction: column; align-items: center; justify-content: space-between;">
 
-		<table id="tabuleiro" class="table is-narrow is-family-monospace"></table>
+		<figure class="image" style="display: flex; max-width: 80%; flex: 1 1 auto"><img src="palavrau.png"></figure>
 
-		<div id="teclado">
+		<table id="tabuleiro" style="flex: 1 1 auto" class="table is-narrow is-family-monospace"></table>
+
+		<div id="teclado" style="flex: 1 1 auto">
 			<table id="teclado1" class="table is-narrow">
 				<tr id="teclado-linha-1"></tr>
 			</table>
@@ -27,6 +28,7 @@
 				<tr id="teclado-linha-3"></tr>
 			</table>
 		</div>
+
 
 		<div id="modal" class="modal">
 			<div class="modal-background"></div>
