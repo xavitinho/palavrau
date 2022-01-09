@@ -333,8 +333,7 @@ aside,
 figure,
 footer,
 header,
-hgroup,
-section {
+hgroup {
   display: block;
 }
 
