@@ -10,44 +10,64 @@ const letras = [
   ["z", "x", "c", "v", "b", "n", "m"]
 ]
 
-let iniciotxt = `
-    <p>Você tem 6 chances para descobrir a palavra VRAU!</p>
-    <p>Após cada tentativa, a cor de cada letra vai mudar para mostrar o quão próximo você está da palavra certa</p>
-    <br><br>
-    <table id="exemplo1" class="table is-narrow is-family-monospace">
-      <tr>
-        <td class="td"> <div class="tag is-black   is-size-3"> t </div></td>
-        <td class="td"> <div class="tag is-black   is-size-3"> e </div></td>
-        <td class="td"> <div class="tag is-warning is-size-3"> s </div></td>
-        <td class="td"> <div class="tag is-black   is-size-3"> t </div></td>
-        <td class="td"> <div class="tag is-black   is-size-3"> e </div></td>
-      </tr>
-    </table>
-    <p>A letra <strong>S</strong> está na palavra mas em outra posição</p>
-    <br><br>
-      
-    <table id="exemplo1" class="table is-narrow is-family-monospace">
-      <tr>
-        <td class="td"> <div class="tag is-black   is-size-3"> J </div></td>
-        <td class="td"> <div class="tag is-black   is-size-3"> e </div></td>
-        <td class="td"> <div class="tag is-black   is-size-3"> s </div></td>
-        <td class="td"> <div class="tag is-primary is-size-3"> u </div></td>
-        <td class="td"> <div class="tag is-black   is-size-3"> s </div></td>
-      </tr>
-    </table>
-    <p>A letra <strong>U</strong> está na palavra e na posição certa.</p>
-    <br><br>
-      
-    <table id="exemplo1" class="table is-narrow is-family-monospace">
-      <tr>
-        <td class="td"> <div class="tag is-warning is-size-3"> r </div></td>
-        <td class="td"> <div class="tag is-warning is-size-3"> e </div></td>
-        <td class="td"> <div class="tag is-warning is-size-3"> s </div></td>
-        <td class="td"> <div class="tag is-warning is-size-3"> t </div></td>
-        <td class="td"> <div class="tag is-black   is-size-3"> o </div></td>
-      </tr>
-    </table>
-    <p>A letra <strong>O</strong> não está na palavra em posição nenhuma.</p>`
+let iniciotxt = 
+`<p>Você tem 6 chances para descobrir a palavra VRAU!</p>
+<p>Após cada tentativa, a cor de cada letra vai mudar para mostrar o quão próximo você esttá da palavra certa</p>
+<br><br>
+<table id="exemplo1" class="table is-narrow is-family-monospace">
+  <tr>
+    <td class="td"> <div class="tag is-black   is-size-3"> t </div></td>
+    <td class="td"> <div class="tag is-black   is-size-3"> e </div></td>
+    <td class="td"> <div class="tag is-warning is-size-3"> s </div></td>
+    <td class="td"> <div class="tag is-black   is-size-3"> t </div></td>
+    <td class="td"> <div class="tag is-black   is-size-3"> e </div></td>
+  </tr>
+</table>
+<p>A letra <strong>S</strong> está na palavra mas em outra posição</p>
+<br><br>
+  
+<table id="exemplo1" class="table is-narrow is-family-monospace">
+  <tr>
+    <td class="td"> <div class="tag is-black   is-size-3"> J </div></td>
+    <td class="td"> <div class="tag is-black   is-size-3"> e </div></td>
+    <td class="td"> <div class="tag is-black   is-size-3"> s </div></td>
+    <td class="td"> <div class="tag is-primary is-size-3"> u </div></td>
+    <td class="td"> <div class="tag is-black   is-size-3"> s </div></td>
+  </tr>
+</table>
+<p>A letra <strong>U</strong> está na palavra e na posição certa.</p>
+<br><br>
+   
+<table id="exemplo1" class="table is-narrow is-family-monospace">
+  <tr>
+  <td class="td"> <div class="tag is-warning is-size-3"> r </div></td>
+    <td class="td"> <div class="tag is-warning is-size-3"> e </div></td>
+    <td class="td"> <div class="tag is-warning is-size-3"> s </div></td>
+    <td class="td"> <div class="tag is-warning is-size-3"> t </div></td>
+    <td class="td"> <div class="tag is-black   is-size-3"> o </div></td>
+  </tr>
+</table>
+<p>A letra <strong>O</strong> não está na palavra em posição nenhuma.</p>`
+
+
+document.addEventListener('keydown', (event) => {
+  let tecla = event.key.toLowerCase()
+  if (letras[0].includes(tecla) || letras[1].includes(tecla) || letras[2].includes(tecla)){
+    letra(tecla)
+  } else {
+    switch(tecla){
+      case 'backspace':
+        limpar()
+      break
+      case 'enter':
+        verificar()
+      break
+      case 'escape':
+        closemodal()
+      break
+    }
+  }
+}, false);
 
 main()
 alerta(iniciotxt)
