@@ -10,9 +10,60 @@ const letras = [
   ["z", "x", "c", "v", "b", "n", "m"]
 ]
 
+let iniciotxt = `
+<section>
+  <div class="instructions">
+    <p>Você tem 6 chances para descobrir a palavra VRAU!</p>
+    <p>Após cada tentativa, a cor de cada letra vai mudar para mostrar o quão próximo você está da palavra certa</p>
+    <br><br>
+    <div class="examples">
+      <div class="example">
+        <table id="exemplo1" class="table is-narrow is-family-monospace">
+          <tr>
+            <td class="td"> <div class="tag is-black   is-size-3"> t </div></td>
+            <td class="td"> <div class="tag is-black   is-size-3"> e </div></td>
+            <td class="td"> <div class="tag is-warning is-size-3"> s </div></td>
+            <td class="td"> <div class="tag is-black   is-size-3"> t </div></td>
+            <td class="td"> <div class="tag is-black   is-size-3"> e </div></td>
+          </tr>
+        </table>
+        <p>A letra <strong>S</strong> está na palavra mas em outra posição</p>
+        <br><br>
+      </div>
+      <div class="example">
+        <table id="exemplo1" class="table is-narrow is-family-monospace">
+          <tr>
+            <td class="td"> <div class="tag is-black   is-size-3"> J </div></td>
+            <td class="td"> <div class="tag is-black   is-size-3"> e </div></td>
+            <td class="td"> <div class="tag is-black   is-size-3"> s </div></td>
+            <td class="td"> <div class="tag is-primary is-size-3"> u </div></td>
+            <td class="td"> <div class="tag is-black   is-size-3"> s </div></td>
+          </tr>
+        </table>
+        <p>A letra <strong>U</strong> está na palavra e na posição certa.</p>
+        <br><br>
+      </div>
+      <div class="example">
+        <table id="exemplo1" class="table is-narrow is-family-monospace">
+          <tr>
+            <td class="td"> <div class="tag is-warning is-size-3"> r </div></td>
+            <td class="td"> <div class="tag is-warning is-size-3"> e </div></td>
+            <td class="td"> <div class="tag is-warning is-size-3"> s </div></td>
+            <td class="td"> <div class="tag is-warning is-size-3"> t </div></td>
+            <td class="td"> <div class="tag is-black   is-size-3"> o </div></td>
+          </tr>
+        </table>
+        <p>A letra <strong>O</strong> não está na palavra em posição nenhuma.</p>
+      </div>
+    </div>
+  </div>
+</section>`
+
 main()
+alerta(iniciotxt)
 
 async function main() {
+  closemodal()
   chance = 0
   tabuleiro = [
     [false, false, false, false, false, false],
@@ -27,9 +78,7 @@ async function main() {
     .then(response => response.json())
     .then(jsonResponse => {
       palavras = jsonResponse
-  })
-    
-  closemodal()
+    })
   iniciatabuleiro()
   iniciateclado()
   sorteia()
@@ -50,7 +99,7 @@ function iniciatabuleiro() {
       code +=
         `\n
     <td class="td">
-    <div id=p${i}l${j} class="tag is-dark is-size-3"></div>
+    <div id=p${i}l${j} class="tag is-dark is-size-3"><br></div>
     </td>`
     }
     code += '\n</tr>'
@@ -66,7 +115,7 @@ function letra(l) {
   if (j < 6) {
     tabuleiro[chance][j] = l
     let show = document.getElementById(`p${chance}l${j}`)
-    show.innerText = l
+    show.innerText = l.toUpperCase()
   }
 }
 
@@ -83,12 +132,15 @@ function verificar() {
     for (let j = 1; j < 6; j++) {
       chute += tabuleiro[chance][j]
     }
+    console.log(chute)
     if (palavras.validas[chute] || palavras.certas[chute]) {
       let ls = palavra.split('')
       for (let j = 0; j < 5; j++) {
-        if(ls[j] !== 'ç') {
+        console.log(ls[j])
+        if (ls[j] !== 'ç') {
           ls[j] = ls[j].normalize('NFD').replace(/[\u0300-\u036f]/g, "")
         }
+        console.log(ls[j])
         let show = document.getElementById(`p${chance}l${j + 1}`)
         let tecla = document.getElementById(tabuleiro[chance][j + 1])
         if (ls[j] === tabuleiro[chance][j + 1]) {
@@ -108,22 +160,22 @@ function verificar() {
       if (palavra === chute) {
         fim(true)
       }
-      if (chance > 6) {
+      chance++
+      console.log(chance)
+      if (chance > 5) {
         fim(false)
       }
-      chance++
     } else {
       alerta('palavra não é valida')
     }
   }
 }
 
-
 function limpar() {
   for (let l = 1; l < 6; l++) {
     tabuleiro[chance][l] = false
     let show = document.getElementById(`p${chance}l${l}`)
-    show.innerText = ' '
+    show.innerHTML = '<br>'
   }
 }
 
@@ -168,7 +220,7 @@ function iniciateclado() {
     }
     for (l of letras[i - 1]) {
       code +=
-        `<td> <button id="${l}" onclick="letra('${l}')" class="button is-light is-outlined">${l}</button> </td>`
+        `<td> <button id="${l}" onclick="letra('${l}')" class="button is-light is-outlined">${l.toUpperCase()}</button> </td>`
     }
     if (i === 3) {
       code +=
