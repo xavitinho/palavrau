@@ -488,15 +488,14 @@ a.box:active {
 }
 
 .button {
-  margin: 0.1em;
-  padding: 1em;
   background-color: white;
   border-color: #dbdbdb;
   border-width: 1px;
   color: #363636;
+  padding: 1em;
+  margin: 0.1em;
   cursor: pointer;
   justify-content: center;
-  padding-top: calc(0.5em - 1px);
   text-align: center;
   white-space: nowrap;
 }
@@ -2959,13 +2958,16 @@ div.icon-text {
 }
 
 .tag:not(body) {
+  width: 2em;
+  height: 2em;
+  margin: 0.1em;
+  border: 1px solid #999; 
   align-items: center;
   background-color: whitesmoke;
   border-radius: 4px;
   color: #4a4a4a;
   display: inline-flex;
   font-size: 0.75rem;
-  height: 2em;
   justify-content: center;
   line-height: 1.5;
   padding-left: 0.75em;
@@ -2994,9 +2996,6 @@ div.icon-text {
 }
 
 .tag:not(body).is-dark {
-  width: 2em;
-  height: 1.7em;
-  border: 1px solid #999; 
   background-color: #363636;
   color: #fff;
 }
