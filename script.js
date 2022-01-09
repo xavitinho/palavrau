@@ -225,3 +225,4 @@ function iniciateclado() {
     linha.innerHTML = code
   }
 }
+
