@@ -197,7 +197,7 @@ function fim(vitoria) {
   }
   let a = document.getElementById('alerta')
   a.innerHTML += `<button class="button is-fullwidth is-light is-outlined" onclick="main()">jogar novamente</button>
-  <a class="button is-fullwidth is-dark" href="https://twitter.com/compose/tweet?text=joguem+palaVRAU+->+http://xavitinho.github.io/palavrau
+  <a class="button is-fullwidth is-dark" href="https://twitter.com/compose/tweet?text=joguem+palaVRAU+->+http://xavitinho.github.io/palavrau de @xavitinho
 ">COMPARTILHAR NO TWITTER</button>`
 }
 
