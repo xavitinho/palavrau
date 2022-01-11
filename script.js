@@ -312,7 +312,8 @@ function fim(vitoria) {
   if (vitoria) {
     alerta(textovitoria)
   } else {
-    alerta('tente de novo :(')
+    alerta(`<p>tente de novo :(</p>
+    <div class="buttons"><button class="button is-fullwidth is-light is-outlined" onclick="main()">jogar novamente</button></div>`)
   }
 }
 
