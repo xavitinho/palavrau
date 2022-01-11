@@ -8,6 +8,22 @@ body {
     background-color: #222;
 }
 
+.pontuacao {
+  width: 60%;
+}
+
+.barras {
+  width: 80%;
+}
+
+.barra {
+  background-color: rgb(158, 158, 158);
+  height: 2em;
+  width: 100%;
+  border: 1px solid #fff;
+  font-family: Arial;
+}
+
 .section {
     height: 100%;
     display: flex; 
@@ -107,7 +123,17 @@ table th {
     text-align: center;
     white-space: nowrap;
   }
+.button.is-dark {
+  background-color: #363636;
+  border-color: transparent;
+  color: #fff;
+}
 
+.button.is-dark:hover, .button.is-dark.is-hovered {
+  background-color: #2f2f2f;
+  border-color: transparent;
+  color: #fff;
+}
   .button.is-light {
     background-color: whitesmoke;
     border-color: transparent;
@@ -131,17 +157,7 @@ table th {
     border-color: whitesmoke;
     color: rgba(0, 0, 0, 0.7);
   }
-.button.is-dark {
-  background-color: #363636;
-  border-color: transparent;
-  color: #fff;
-}
 
-.button.is-dark:hover, .button.is-dark.is-hovered {
-  background-color: #2f2f2f;
-  border-color: transparent;
-  color: #fff;
-}
   .button.is-fullwidth {
     display: flex;
     width: 100%;
@@ -159,6 +175,11 @@ table th {
     color: #040404;
   }
 
+.buttons {
+  display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
   .modal, .modal-background {
     bottom: 0;
     left: 0;
@@ -181,9 +202,7 @@ table th {
     display: flex;
   }
   
-  .modal-background {
-    background-color: rgba(10, 10, 10, 0.86);
-  }
+  
 
   .modal-content {
   margin: 0 20px;
@@ -226,7 +245,7 @@ table th {
   }
 
   .notification.is-dark {
-    background-color: #36363677;
+    background-color: #000000d0;
     color: #fff;
   }
 
