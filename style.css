@@ -1,0 +1,126 @@
+:root {
+  /* */
+  --color: #222;
+  --color-border: #222;
+  --color-font: #fff;
+  --color-light: #363636;
+  
+  --color-yellow: #ffe08a;
+  --color-green: #00d1b2;
+  --color-black: #0a0a0a;
+  
+  --border: 1px solid #999;
+  --border-radius: 8px;
+  --gap: 4px;
+  --dt-width: 100vw;
+  --keyboard-size: calc(var(--dt-width) * .9);
+  --key-size: calc(var(--keyboard-size) / 6);
+}
+
+* {
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color);
+  color: var(--color-font);
+}
+
+#jogo {
+  width: calc(100vw - (var(--gap) * 3));
+  margin: auto;
+  padding: var(--gap);
+}
+
+/* LOGO */
+#jogo figure img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* TABULEIRO */
+.tabuleiro {
+  width: 100%;
+}
+
+#tabuleiro {
+  width: var(--keyboard-size);
+  margin: calc(4 * var(--gap)) auto;
+}
+
+#tabuleiro tr {
+  text-align: center;
+}
+
+#tabuleiro tr .tag {
+  width: var(--key-size);
+  height: var(--key-size);
+  line-height: var(--key-size);
+  background-color: var(--color-light);
+  border-radius: var(--border-radius);
+  border: var(--border);
+  margin: var(--gap);
+  font-size: calc(var(--key-size) * .5);
+}
+
+#tabuleiro tr .tag.is-warning {
+  background-color: var(--color-yellow);
+  color: var(--color-black);
+}
+
+#tabuleiro tr .tag.is-black {
+  background-color: var(--color-black);
+  color: var(--color-font);
+}
+
+#tabuleiro tr .tag.is-primary {
+  background-color: var(--color-green);
+  color: var(--color-font);
+}
+
+/* TECLADO */
+#teclado button {
+  width: 100%;
+  height: 2.4em;
+  line-height: 2.4em;
+  display: block;
+  color: var(--color-font);
+  background-color: var(--color);
+  border: var(--border);
+  border-radius: var(--border-radius);
+}
+
+#teclado button:hover {
+  color: var(--color);
+  background-color: var(--color-font);
+}
+
+#teclado .table {
+  width: 100%;
+}
+
+#teclado .table tr {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--gap);
+  width: 100%;
+}
+
+#teclado .table tr td {
+  display: flex;
+  flex-grow: 4;
+}
+
+/* DESKTOP */
+@media (min-width: 500px) {
+  :root {
+    --dt-width: 500px;
+    --keyboard-size: calc(var(--dt-width) * .8);
+  }
+  #jogo {
+    max-width: var(--dt-width);
+  }
+}
