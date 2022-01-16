@@ -337,11 +337,9 @@ function iniciateclado() {
       code +=
         `<td>
         <button id="botão-enviar" onclick="verificar()" class="button is-light">
-				<span>&nbsp;</span>
-          <span>
-						<ion-icon name="send"></ion-icon>
-          </span>
-        <span>&nbsp;</span>
+        <span>
+          <ion-icon name="send"></ion-icon>
+        </span>
         </button>
       </td>`
     }
