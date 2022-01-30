@@ -1,3 +1,5 @@
+console.log(process.env.TESTE)
+
 let palavras = ''
 
 var palavra = false
