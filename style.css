@@ -11,7 +11,7 @@
   
   --border: 1px solid #999;
   --border-radius: 8px;
-  --gap: 4px;
+  --gap: 2px;
   --dt-width: 100vw;
   --keyboard-size: calc(var(--dt-width) * .9);
   --key-size: calc(var(--keyboard-size) / 6);
@@ -54,6 +54,8 @@ body {
 
 #tabuleiro tr {
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .tag {
@@ -63,7 +65,7 @@ body {
   background-color: var(--color-light);
   border-radius: var(--border-radius);
   border: var(--border);
-  margin: var(--gap);
+  margin: calc(var(--gap));
   font-size: calc(var(--key-size) * .5);
 }
 
@@ -83,20 +85,16 @@ body {
 }
 
 /* TECLADO */
-#teclado button {
+button {
+  font-size: 1.2em;
+  cursor: pointer;
   width: 100%;
   height: 2.4em;
   line-height: 2.4em;
-  display: block;
-  color: var(--color-font);
-  background-color: var(--color);
+  display: flex;
+  justify-content: center;
   border: var(--border);
   border-radius: var(--border-radius);
-}
-
-#teclado button:hover {
-  color: var(--color);
-  background-color: var(--color-font);
 }
 
 #teclado .table {
@@ -111,8 +109,8 @@ body {
 }
 
 #teclado .table tr td {
-  display: flex;
-  flex-grow: 4;
+  display: block;
+  flex-grow: 1;
 }
 
 /* DESKTOP */
@@ -124,4 +122,108 @@ body {
   #jogo {
     max-width: var(--dt-width);
   }
+}
+
+.pontuacao {
+  width: 60%;
+}
+
+.barras {
+  width: 80%;
+}
+
+.barra {
+  background-color: rgb(158, 158, 158);
+  height: 2em;
+  width: 100%;
+  border: 1px solid #fff;
+  font-family: Arial;
+}
+
+.buttons {
+  width: 70%; 
+}
+
+.button.is-dark {
+  background-color: #363636;
+  border-color: transparent;
+  color: #fff;
+}
+
+.button.is-dark:hover, .button.is-dark.is-hovered {
+  background-color: #fff;
+  border-color: transparent;
+  color:  #363636;
+}
+
+.button.is-light {
+    background-color: whitesmoke;
+    border-color: transparent;
+    color: rgba(0, 0, 0, 0.7);
+  }
+  
+.button.is-light:hover, .button.is-light.is-hovered {
+  background-color: #eeeeee;
+  border-color: transparent;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.button.is-light.is-outlined {
+  background-color: transparent;
+  border-color: whitesmoke;
+  color: whitesmoke;
+}
+  
+.button.is-light.is-outlined:hover, .button.is-light.is-outlined.is-hovered, .button.is-light.is-outlined:focus, .button.is-light.is-outlined.is-focused {
+  background-color: whitesmoke;
+  border-color: whitesmoke;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.button.is-fullwidth {
+  display: flex;
+  width: 100%;
+}
+
+.button.is-primary {
+  background-color: #00d1b2;
+  border-color: whitesmoke;
+  color: #fff;
+}
+  
+.button.is-primary:hover, .button.is-primary.is-hovered {
+  background-color: #eeeeee;
+  border-color: whitesmoke;
+  color: #040404;
+}
+
+.section {
+  height: 100%;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: space-between;
+}
+
+.alerta {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: space-between;
+}
+
+.notification {
+  background-color: whitesmoke;
+  border-radius: 4px;
+  position: relative;
+  padding: 1.25rem 2.5rem 1.25rem 1.5rem;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: space-between;
+}
+
+.notification.is-dark {
+  background-color: #000000d0;
+  color: #fff;
 }
