@@ -282,7 +282,7 @@ function fim(vitoria) {
             </table>
             <br>
           </div>
-          <br><strong>compartilhe seu resultado:</strong><br>
+          <br><strong>compartilhe seu resultado:</strong>
           <div class="tabuleirofinal">
             <br> ${emojis[1]} <br>
           </div>
@@ -306,7 +306,7 @@ function fim(vitoria) {
 
           <div class="buttons">   
             <button class="button is-fullwidth is-light is-outlined" onclick="main()">jogar novamente</button>
-            <a class="button is-fullwidth is-dark" href="https://twitter.com/compose/tweet?text=joguei+palaVRAU:%0A%0AA palavra era ${palavra.toUpperCase()}%0A${emojis[0]}%0Axavitinho.github.io/palavrau+de+@xavitinho+">compartilhar no twitter</a>
+            <button class="button is-fullwidth is-dark" onclick="window.open('https://twitter.com/compose/tweet?text=joguei+palaVRAU:%0A%0AA palavra era ${palavra.toUpperCase()}%0A${emojis[0]}%0Axavitinho.github.io/palavrau+de+@xavitinho+')">compartilhar no twitter</a>
           </div>`
 
   if (vitoria) {
